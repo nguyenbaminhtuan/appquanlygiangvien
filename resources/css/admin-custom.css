@@ -1,0 +1,81 @@
+/* resources/css/admin-custom.css */
+
+.admin-sidebar {
+    /* Ở đây chúng ta tập trung vào các style tùy chỉnh phức tạp hơn */
+    transition: width 0.3s ease-in-out; /* Hiệu ứng nếu bạn muốn sidebar có thể thu gọn */
+}
+
+.admin-sidebar h3 {
+    /* Ví dụ: font-family: 'YourCustomFont', sans-serif; */
+    /* color: #334155; */ /* dark:text-gray-200 đã xử lý màu chữ tối */
+}
+
+.admin-sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem; /* 12px 16px */
+    border-radius: 0.375rem; /* rounded-md */
+    font-weight: 500; /* font-medium */
+    /* color: #4B5563; */ /* text-gray-700 dark:text-gray-300 đã xử lý */
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.admin-sidebar-link:hover {
+    background-color: #EFF6FF; /* bg-blue-100 (light mode) */
+    color: #dee0e6; /* text-blue-600 (light mode) */
+}
+
+/* Dark mode hover (Tailwind sẽ tự xử lý nếu bạn dùng class dark:hover:...) */
+/* Nếu bạn muốn định nghĩa riêng trong CSS: */
+@media (prefers-color-scheme: dark) {
+    .admin-sidebar-link:hover {
+        background-color: #1E3A8A; /* bg-blue-800 (dark mode) */
+        color: #BFDBFE; /* text-blue-200 (dark mode) */
+    }
+}
+
+.admin-sidebar-link-active {
+    background-color: #3B82F6; /* bg-blue-500 (light mode) */
+    color: white;
+    /* box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); */ /* Ví dụ shadow nhẹ */
+}
+
+@media (prefers-color-scheme: dark) {
+    .admin-sidebar-link-active {
+        background-color: #2563EB; /* bg-blue-600 (dark mode) */
+        color: white;
+    }
+}
+
+.admin-sidebar-link i { /* Nếu bạn dùng Font Awesome icons */
+    margin-right: 0.75rem; /* mr-3 */
+    width: 1.25rem; /* w-5 */
+    text-align: center;
+    /* color: #9CA3AF; */ /* text-gray-400 */
+}
+
+.admin-sidebar-link-active i {
+    /* color: white; */
+}
+
+.admin-sidebar-link:hover i {
+    /* color: inherit; */ /* Lấy màu từ thẻ a cha */
+}
+
+
+.admin-sidebar-logout-link {
+    /* Style riêng cho nút đăng xuất nếu cần */
+}
+
+.admin-sidebar-logout-link:hover {
+    background-color: #EF4444; /* bg-red-500 */
+    color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    .admin-sidebar-logout-link:hover {
+        background-color: #DC2626; /* bg-red-600 */
+        color: white;
+    }
+}
